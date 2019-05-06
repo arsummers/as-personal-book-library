@@ -1,0 +1,25 @@
+{
+  "name": "as-personal-book-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arsummers/as-personal-book-library.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arsummers/as-personal-book-library/issues"
+  },
+  "homepage": "https://github.com/arsummers/as-personal-book-library#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "pg": "^7.10.0"
+  }
+}
