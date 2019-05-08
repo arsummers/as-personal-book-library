@@ -2,8 +2,9 @@
 
 //basic app setup
 require('dotenv').config();
+const superagent = require('superagent');
 const express = require('express');
-const app = express;
+const app = express();
 const pg = require('pg');
 
 //lets the app know I'll be using ejs for server-side rendering
@@ -21,6 +22,11 @@ client.on('error', err => console.log(err));
 app.listen(PORT, ()=> console.log(`Library listening on port ${PORT}`));
 
 /////////////////////////////////////
+
+app.get('/', (request, response) =>{
+  response.render('/')
+});
+
 
 function Book(title, first_name, last_name, genre){
   this.title = title;
