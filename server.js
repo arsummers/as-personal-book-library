@@ -24,7 +24,7 @@ app.listen(PORT, ()=> console.log(`Library listening on port ${PORT}`));
 /////////////////////////////////////
 
 app.get('/', (request, response) =>{
-  response.render('/')
+  response.render('./index');
 });
 
 
