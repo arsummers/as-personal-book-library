@@ -27,6 +27,11 @@ app.get('/', (request, response) =>{
   response.render('./index');
 });
 
+function handle_error(err, response){
+  console.error(err);
+  if (response) response.status(500).send('You have achieved an error in your server');
+}
+
 
 function Book(title, first_name, last_name, genre){
   this.title = title;
