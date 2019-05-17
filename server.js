@@ -39,3 +39,7 @@ function Book(title, first_name, last_name, genre){
   this.last_name = last_name;
   this. genre = genre;
 }
+
+//function insert_books_into_DB
+
+//function display_books_from_db linking to separate page
