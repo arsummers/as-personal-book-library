@@ -8,3 +8,6 @@ CREATE TABLE book_list (
   genre TEXT,
   series BOOLEAN
 );
+
+INSERT INTO book_list(title, first_name, last_name, genre, series)
+VALUES('The Name of the Wind', 'Patrick', 'Rothfuss', 'Fantasy', true);
