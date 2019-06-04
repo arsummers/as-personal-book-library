@@ -27,13 +27,15 @@ app.get('/', (request, response) =>{
   response.render('./index');
 });
 
+app.get('*', (request, response => response.status(404).send('go away this route is not home')));
+
 function handle_error(err, response){
   console.error(err);
   if (response) response.status(500).send('You have achieved an error in your server');
 }
 
 
-function Book(title, first_name, last_name, genre){
+function Book(title, first_name, last_name, genre, series){
   this.title = title;
   this.first_name = first_name;
   this.last_name = last_name;
@@ -41,6 +43,15 @@ function Book(title, first_name, last_name, genre){
   this.series = series;
 }
 
-//function insert_books_into_DB
+function insert_books_into_DB(request, response){
+  let SQL = 'INSERT INTO book_list(title, first_name, last_name, genre, series) VALUES ($1, $2, $3, $4, $5);';
+  let values = [title, first_name, last_name, genre, series];
+
+  return client.query(SQL, values)
+    .then(sql_result =>{
+      response.redirect('/')
+    })
+    .catch(error => handle_error(error, response))
+}
 
 //function display_books_from_db linking to separate page
